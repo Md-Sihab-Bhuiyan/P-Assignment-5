@@ -1,43 +1,42 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const donateButtons = document.querySelectorAll('.btn-donate');
 
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const donationInput = document.getElementById('donation-amount');
-    const donateButton = document.getElementById('btn-donate');
-    const addedMoneyDisplay = document.getElementById('added-money');
     const totalAvailableDisplay = document.getElementById('total-donation');
+    let totalAvailable = 1000000; 
+    totalAvailableDisplay.textContent = totalAvailable + " BDT";
 
-    const maxDonationLimit = 1000000;
+    donateButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
 
-    // Initialize the values in the UI (for demo purposes, setting 0 as starting point)
-    addedMoneyDisplay.textContent = "0 BDT";
-    totalAvailableDisplay.textContent = "1000000 BDT"; 
+            const section = this.closest('section');
 
-    donateButton.addEventListener('click', function() {
-        const donationValue = parseFloat(donationInput.value);
+            const donationInput = section.querySelector('.donation-amount');
+            const addedMoneyDisplay = section.querySelector('.added-money');
 
-        const currentAmount = parseFloat(totalAvailableDisplay.textContent); 
-        const addedAmount = parseFloat(addedMoneyDisplay.textContent); 
+            let donationValue = parseFloat(donationInput.value);
+            if (isNaN(donationValue) || donationValue <= 0) {
+                alert("Please enter a valid donation amount!");
+                return;
+            }
+            let addedAmount = parseFloat(addedMoneyDisplay.textContent) || 0;
 
-        if (isNaN(donationValue) || donationValue <= 0) {
-            alert("Please enter a valid donation amount!");
-            return;
-        }
+            if (donationValue > totalAvailable) {
+                alert("You do not have enough balance to donate this amount!");
+                return;
+            }
 
-        if (donationValue > currentAmount) {
-            alert("You do not have enough balance to donate this amount!");
-            return;
-        }
+            if ((addedAmount + donationValue) > 1000000) {
+                alert("The total donations cannot exceed 1 million BDT!");
+                return;
+            }
 
-        if ((addedAmount + donationValue) > maxDonationLimit) {
-            alert("The total donations cannot exceed 1 million BDT!");
-            return;
-        }
+            addedAmount += donationValue;
+            addedMoneyDisplay.textContent = addedAmount + " BDT";
 
-        addedMoneyDisplay.textContent = (addedAmount + donationValue) + " BDT";
+            totalAvailable -= donationValue;
+            totalAvailableDisplay.textContent = totalAvailable + " BDT";
 
-        totalAvailableDisplay.textContent = (currentAmount - donationValue) + " BDT";
-
-        donationInput.value = "";
+            donationInput.value = "";
+        });
     });
 });
