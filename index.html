@@ -15,15 +15,21 @@
         }
 
         .active {
-            background-color: #2d6a4f;
-            color: white;
+            background-color: white;
+            color: black;
         }
+
+        .font-manrope {
+            font-family: "Manrope", sans-serif;
+        }
+
     </style>
 
 </head>
 
-<body class="bg-gray-100">
-    <nav class="px-8 py-2 bg-base-100 sticky top-0 z-0 bg-opacity-50 backdrop:blur transition-shadow">
+<body class="bg-white min-h-screen text-black">
+    
+    <nav class="px-8 py-2 bg-white sticky top-0 z-10 bg-opacity-80 backdrop:blur transition-shadow">
         <div class="navbar ">
             <div class="navbar-start">
                 <div class="">
@@ -63,7 +69,7 @@
                             <img src="assets/coin.png" alt="">
                             <div class="added-money stat-value text-2xl"></div>
                         </div>
-                        <h1 class="text-2xl font-bold mb-4">Donate for flood at Noakhali, Bangladesh</h1>
+                        <h1 class="header-text text-2xl font-bold mb-4">Donate for flood at Noakhali, Bangladesh</h1>
                         <p class="mb-6 text-lg  text-gray-700">The recent floods in Noakhali have caused
                             significant damage
                             to homes infrastructure. Your
@@ -72,7 +78,8 @@
                             contribution, big or small, makes difference. Please join us in supporting the
                             relief efforts
                             and making a positive impact on the lives of those in need.</p>
-                        <input type="number" class="donation-amount w-full my-4 py-3 pl-4" min="1" required /><br>
+                        <input type="any" class="donation-amount w-full my-4 py-3 pl-4 bg-white"
+                            placeholder="Write Your Amount" min="1" required /><br>
                         <button
                             class="btn-donate w-full inline-block bg-lime-400  text-black font-bold px-6 py-3 rounded-full hover:bg-slate-200 text-center">Donate
                             Now</button>
@@ -102,7 +109,8 @@
                             contribution counts towards making a real difference. Please consider donating today
                             to assist
                             those in urgent need.</p>
-                        <input type="number" class="donation-amount w-full my-4 py-3 pl-4" min="1" required /><br>
+                        <input type="any" class="donation-amount w-full my-4 py-3 pl-4 bg-white"
+                            placeholder="Write Your Amount" min="1" required /><br>
                         <button
                             class="btn-donate w-full inline-block bg-lime-400  text-black font-bold px-6 py-3 rounded-full hover:bg-slate-200 text-center">Donate
                             Now</button>
@@ -135,7 +143,8 @@
                             recovery. Please consider making a donation to support these brave individuals in
                             their time of
                             need.</p>
-                        <input type="number" class="donation-amount w-full my-4 py-3 pl-4" min="1" required /><br>
+                        <input type="any" class="donation-amount w-full my-4 py-3 pl-4 bg-white"
+                            placeholder="Write Your Amount" min="1" required /><br>
                         <button
                             class="btn-donate w-full inline-block bg-lime-400  text-black font-bold px-6 py-3 rounded-full hover:bg-slate-200 text-center">Donate
                             Now</button>
@@ -145,7 +154,7 @@
         </section>
 
         <!-- History_Part -->
-        <section class="container mx-auto px-4 py-12" id="donation-history">
+        <section class="container mx-auto px-4 py-12 bg-white" id="donation-history">
             <h2 class="text-2xl font-bold mb-4">History</h2>
             <div id="history-container">
                 <!-- Donation history entries will be appended here -->
@@ -154,7 +163,6 @@
 
     </main>
 
-    <script src="history.js"></script>
     <script src="addMoney.js"></script>
     <script src="home.js"></script>
 
