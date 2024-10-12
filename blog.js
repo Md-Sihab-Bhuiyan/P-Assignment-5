@@ -19,25 +19,3 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
-
-// For single blog
-// document.addEventListener('DOMContentLoaded', function() {
-//     const toggleButton = document.getElementById('toggle-answer');
-//     const answer = document.getElementById('answer');
-//     const icon = document.getElementById('icon');
-
-//     toggleButton.addEventListener('click', function() {
-
-//         answer.classList.toggle('hidden');
-//         if (icon.classList.contains('fa-angle-up')) {
-//             icon.classList.remove('fa-angle-up');
-//             icon.classList.add('fa-angle-down');
-//         } else {
-//             icon.classList.remove('fa-angle-down');
-//             icon.classList.add('fa-angle-up');
-//         }
-//     });
-// });
-
-
