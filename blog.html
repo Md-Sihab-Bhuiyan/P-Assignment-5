@@ -5,7 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - DOM Questions</title>
+
+    <script src="https://kit.fontawesome.com/71cac58936.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+
+
 </head>
 
 <body class="bg-gray-100 text-gray-800">
@@ -18,22 +23,63 @@
         </div>
     </header>
 
-    <section class="container mx-auto px-4 py-12">
-        <h1 class="text-4xl font-bold mb-8">Important FAQ</h1>
+    <section class="container mx-auto p-6">
 
-        <div class="space-y-8">
+        <h1 class="text-4xl font-bold mb-8">Important FAQ <i class="fa-regular fa-circle-question"></i></h1>
 
-            <!-- Q1 -->
-            <div>
-                <h2 class="text-2xl font-semibold mb-4">What is the Document Object Model (DOM)?</h2>
-                <input type="text" id="domAnswerInput" placeholder="Write Your answer."
-                    class="px-4 py-2 border border-gray-300 rounded-md w-full max-w-xs">
+        <div class="bg-white shadow-lg rounded-lg p-4 mb-6">
+            <div class="flex justify-between items-center">
+                <h2 class="text-xl font-bold">What is the Document Object Model (DOM)?</h2>
+                <button class="toggle-answer text-gray-500">
+                    <i class="icon fas fa-angle-up"></i>
+                </button>
             </div>
-
-
+            <div class="answer mt-4 text-gray-600 hidden">
+                A tree-like structure that represents a webpage, allowing you to manipulate HTML and CSS.
+            </div>
         </div>
+
+        <div class="bg-white shadow-lg rounded-lg p-4 mb-6">
+            <div class="flex justify-between items-center">
+                <h2 class="text-xl font-bold">How do you select an element from DOM?</h2>
+                <button class="toggle-answer text-gray-500">
+                    <i class="icon fas fa-angle-up"></i>
+                </button>
+            </div>
+            <div class="answer mt-4 text-gray-600 hidden">
+                Use: getElementById(), querySelector(), or querySelectorAll().
+            </div>
+        </div>
+
+        <div class="bg-white shadow-lg rounded-lg p-4 mb-6">
+            <div class="flex justify-between items-center">
+                <h2 class="text-xl font-bold">What is event delegation in the context of the DOM, and why is it useful?
+                </h2>
+                <button class="toggle-answer text-gray-500">
+                    <i class="icon fas fa-angle-up"></i>
+                </button>
+            </div>
+            <div class="answer mt-4 text-gray-600 hidden">
+                Attach one listener to a parent to manage events for child elements, improving efficiency.
+            </div>
+        </div>
+
+        <div class="bg-white shadow-lg rounded-lg p-4 mb-6">
+            <div class="flex justify-between items-center">
+                <h2 class="text-xl font-bold">How do you manipulate an element's attributes and styles using the DOM?
+                </h2>
+                <button class="toggle-answer text-gray-500">
+                    <i class="icon fas fa-angle-up"></i>
+                </button>
+            </div>
+            <div class="answer mt-4 text-gray-600 hidden">
+                Use setAttribute()/getAttribute() for attributes, and element.style.property for styles.
+            </div>
+        </div>
+
     </section>
 
+    <script src="blog.js"></script>
 </body>
 
 </html>
