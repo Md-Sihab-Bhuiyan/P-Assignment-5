@@ -4,14 +4,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Donate Bangladesh</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
+    <nav class="px-8 py-2 bg-base-100 sticky top-0 z-0 bg-opacity-50 backdrop:blur transition-shadow">
+        <div class="navbar ">
+            <div class="navbar-start">
+                <div class="">
+                    <a href="blog.html" class="btn btn-ghost text-xl font-bold">Blog</a>
+                </div>
+            </div>
 
-    <script src="history.js"></script>
+            <div class="navbar-center gap-3">
+                <img src="assets/logo.png" alt="">
+                <a class="text-2xl font-bold">Donate Bangladesh</a>
+            </div>
+
+            <div class="navbar-end">
+                <img src="assets/coin.png" alt="">
+                <div id="total-donation"></div>
+            </div>
+
+
+        </div>
+        <div class="flex justify-center gap-6">
+            <a href="donation.html"
+                class="inline-block bg-lime-400  text-black font-bold px-6 py-3 rounded-full hover:bg-slate-200  justify-center">Donation</a>
+            <a href="history.html"
+                class="inline-block bg-lime-400  text-black font-bold px-6 py-3 rounded-full hover:bg-slate-200  justify-center">History</a>
+
+        </div>
+    </nav>
+    <main>
+        <section class="container mx-auto px-4 py-12">
+            <div class="flex flex-col lg:flex-row items-center lg:space-x-8">
+                <div class="w-full lg:w-1/2">
+                    <img src="assets/noakhali.png" alt="Hero Image" class="w-full h-auto object-cover">
+                </div>
+                <div class="w-full lg:w-1/2 lg:text-left mt-8 lg:mt-0">
+                    <div class="flex">
+                        <img src="assets/coin.png" alt="">
+                        <div id="added-money" class="stat-value text-2xl font-bold"></div>
+                    </div>
+                    <h1 class="text-2xl font-bold mb-4">Donate for flood at Noakhali, Bangladesh</h1>
+                    <p class="mb-6 text-lg  text-gray-700">The recent floods in Noakhali have caused significant damage
+                        to homes infrastructure. Your
+                        donation will help provide essential supplies and to those affected by this disaster. Every
+                        contribution, big or small, makes difference. Please join us in supporting the relief efforts
+                        and making a positive impact on the lives of those in need.</p>
+                    <input type="number" id="donation-amount" class="w-full my-4 py-3 pl-4" min="1" required/><br>
+                    <button id="btn-donate"
+                        class="w-full inline-block bg-lime-400  text-black font-bold px-6 py-3 rounded-full hover:bg-slate-200 text-center">Donate
+                        Now</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- <script src="history.js"></script> -->
+    <script src="addMoney.js"></script>
+
+
 </body>
 
 </html>
